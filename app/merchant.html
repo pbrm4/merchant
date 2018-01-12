@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+
+  <head>
+    <meta charset="utf-8" />
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.0.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js" data-semver="1.0.7"></script>
+    <script src="app.js"></script>
+	</style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+	
+	<link rel="stylesheet" href="/bootstrap.css">
+  <link rel="stylesheet" href="/other.css">
+  <link rel="stylesheet" href="/main.css">
+</head>
+
+  </head>
+
+  <body ng-controller="MerchantCtrl">
+  
+  <div class="container login-container">
+  <div class="panel">
+    <div class="panel-body">
+      <div ng-if="messages.error" role="alert" class="alert alert-danger">
+        <div ng-repeat="error in messages.error">{{error.msg}}</div>
+      </div>
+  <form>
+        <legend>Merchant Details</legend><br>
+		<label>{{merchantno}}</label>
+		<label>{{name}}</label>
+        <div class="form-group">
+			<label>Bank Code </label>
+		  <input type="text" name="bankcode" id="accountno" placeholder="Bank Code"   class="form-control" ng-model="bankcode" autofocus></input>
+		  <label>Account Number </label>
+          <input type="text" name="accountno" id="accountno" placeholder="Account Number"  ng-width="250dp" class="form-control" ng-model="accno" autofocus></input>
+        </div>
+		<label>Account Type</label>
+		<select ng-model="selectedType" ng-options="x for x in drop">
+		</select>
+    <button confirmed-click="login()" 
+    ng-confirm-click="Would you like to change your account no?">Change account number</button>
+	<form>
+	</div>
+	</div>
+	</div>
+  </body>
+
+</html>

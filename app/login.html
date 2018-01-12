@@ -1,0 +1,70 @@
+<html  ng-app="MyApp">
+<head>
+
+<style>
+#boxed{
+	background-color: lightgrey;
+    width: 300px;
+    border: 25px;
+    padding: 25px;
+    margin: 25px;
+}
+
+</style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+	
+	<link rel="stylesheet" href="/bootstrap.css">
+  <link rel="stylesheet" href="/other.css">
+  <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+<div ng-controller="LoginCtrl">
+
+
+
+<div class="container login-container">
+  <div class="panel">
+    <div class="panel-body">
+      <div ng-if="messages.error" role="alert" class="alert alert-danger">
+        <div ng-repeat="error in messages.error">{{error.msg}}</div>
+      </div>
+      <form ng-submit="login()">
+        <legend>Log In</legend>
+        <div class="form-group">
+          <label for="merchantno">Merchant Number</label>
+          <input type="text" name="merchnatno" id="merchantno" placeholder="Merchant Number" class="form-control" ng-model="user.merchantno" autofocus>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="Password" class="form-control" ng-model="user.password">
+        </div>
+        <div class="form-group"><a href="/forgot"><strong>Forgot your password?</strong></a></div>
+        <button type="submit" class="btn btn-success">Log in</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!---<div id="boxed">
+<center>
+<font face="Comic Sans MS"><p>Login to your account</p>
+<font size="2"><span>Email ID /Phone Number</span>
+<input style="margin-bottom:10px;"type="text" ng-model="logData.email" width="250px"/><br>
+<span >Password</span><br>
+<input  type="password" ng-model="logData.pass" /><br>
+<button style="margin:10px;"ng-click="checkUser()">Submit</button>
+<br><a href="#">Forgot Password/Claim your Account</a>
+<br><a href="/testreg.html">Need to register?</a>
+</font>
+</font>
+</center>
+</div>
+</div>
+--->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+</body>
+</html>
